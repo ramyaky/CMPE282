@@ -1,6 +1,6 @@
-// @SOURCE:/home/ramyaky/projectcmpe282/conf/routes
-// @HASH:f6cd5dc7c280f38a006eae491129ab872c75d958
-// @DATE:Thu Mar 05 14:51:03 PST 2015
+// @SOURCE:/home/ramyaky/Ramya/play-2.2.4/projectcmpe282/conf/routes
+// @HASH:5e38fffcb3ad02a7011f3e8d3e652c5d1afb2583
+// @DATE:Fri Mar 06 14:27:14 PST 2015
 
 
 import play.core._
@@ -36,10 +36,14 @@ private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern
 private[this] lazy val controllers_Application_dashboard1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("dashboard"))))
         
 
-// @LINE:9
-private[this] lazy val controllers_Assets_at2 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:8
+private[this] lazy val controllers_Application_viewIndividualCow2 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("individualCowDetails"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dashboard""","""controllers.Application.dashboard()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:10
+private[this] lazy val controllers_Assets_at3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dashboard""","""controllers.Application.dashboard()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """individualCowDetails""","""controllers.Application.viewIndividualCow()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -63,8 +67,16 @@ case controllers_Application_dashboard1(params) => {
 }
         
 
-// @LINE:9
-case controllers_Assets_at2(params) => {
+// @LINE:8
+case controllers_Application_viewIndividualCow2(params) => {
+   call { 
+        invokeHandler(controllers.Application.viewIndividualCow(), HandlerDef(this, "controllers.Application", "viewIndividualCow", Nil,"GET", """""", Routes.prefix + """individualCowDetails"""))
+   }
+}
+        
+
+// @LINE:10
+case controllers_Assets_at3(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

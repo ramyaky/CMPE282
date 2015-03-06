@@ -15,4 +15,8 @@ public class Application extends Controller {
         return ok(dashboard.render());
     }
 
+    public static Result viewIndividualCow() {
+        return ok(cow.render("Your new application is ready."));
+    }
+
 }
