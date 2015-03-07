@@ -30,8 +30,7 @@ Seq[Any](format.raw/*1.19*/("""
 
 """),_display_(Seq[Any](/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
 
-<h4> This is my first play application </h4>
-""")))})),format.raw/*6.2*/("""
+""")))})),format.raw/*5.2*/("""
 """))}
     }
     
@@ -44,11 +43,11 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Mar 06 14:27:14 PST 2015
+                    DATE: Fri Mar 06 22:04:07 PST 2015
                     SOURCE: /home/ramyaky/Ramya/play-2.2.4/projectcmpe282/app/views/index.scala.html
-                    HASH: 6affa38c70c8f211e7da2b4eba2b6e919c427a83
-                    MATRIX: 774->1|885->18|922->21|953->44|992->46|1070->94
-                    LINES: 26->1|29->1|31->3|31->3|31->3|34->6
+                    HASH: 1d1f8780355fa291c2c4a7389d6dd3bbc15b81c1
+                    MATRIX: 774->1|885->18|922->21|953->44|992->46|1025->49
+                    LINES: 26->1|29->1|31->3|31->3|31->3|33->5
                     -- GENERATED --
                 */
             

@@ -18,5 +18,9 @@ public class Application extends Controller {
     public static Result viewIndividualCow() {
         return ok(cow.render("Your new application is ready."));
     }
+    
+    public static Result simulationProcess() {
+        return ok(simulate.render());
+    }
 
 }

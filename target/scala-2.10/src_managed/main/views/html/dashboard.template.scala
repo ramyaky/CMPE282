@@ -29,102 +29,9 @@ object dashboard extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appenda
 Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_display_(Seq[Any](format.raw/*1.35*/("""
 
     <section id="container">
-        <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-        <!--header start-->
-        <header class="header black-bg">
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars tooltips" data-placement="right"
-                    data-original-title="Toggle Navigation"></div>
-            </div>
-            <!--logo start-->
-            <a href="index.html" class="logo"><b>Smart App</b></a>
-            <!--logo end-->
-            <div class="nav notify-row" id="top_menu"></div>
-            <div class="top-menu">
-                <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
-                </ul>
-            </div>
-        </header>
-        <!--header end-->
+        
+"""),_display_(Seq[Any](/*5.2*/commonTemplate())),format.raw/*5.18*/("""
 
-        <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-        <!--sidebar start-->
-        <aside>
-            <div id="sidebar" class="nav-collapse ">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-
-                    <p class="centered">
-                        <a href="profile.html"><img src=""""),_display_(Seq[Any](/*35.59*/routes/*35.65*/.Assets.at("images/tible.png"))),format.raw/*35.95*/(""""
-                            class="img-circle" width="60" style="background-color: white;"></a>
-                    </p>
-                    <h5 class="centered">Admin</h5>
-
-                    <li class="mt"><a class="active" href="index.html"> <i
-                            class="fa fa-dashboard"></i> <span>Dashboard</span>
-                    </a></li>
-
-                    <li class="sub-menu"><a href="javascript:;"> <i
-                            class="fa fa-desktop"></i> <span>UI Elements</span>
-                    </a>
-                        <ul class="sub">
-                            <li><a href="general.html">General</a></li>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="panels.html">Panels</a></li>
-                        </ul></li>
-
-                    <li class="sub-menu"><a href="javascript:;"> <i
-                            class="fa fa-cogs"></i> <span>Components</span>
-                    </a>
-                        <ul class="sub">
-                            <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="todo_list.html">Todo List</a></li>
-                        </ul></li>
-                    <li class="sub-menu"><a href="javascript:;"> <i
-                            class="fa fa-book"></i> <span>Extra Pages</span>
-                    </a>
-                        <ul class="sub">
-                            <li><a href="blank.html">Blank Page</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="lock_screen.html">Lock Screen</a></li>
-                        </ul></li>
-                    <li class="sub-menu"><a href="javascript:;"> <i
-                            class="fa fa-tasks"></i> <span>Forms</span>
-                    </a>
-                        <ul class="sub">
-                            <li><a href="form_component.html">Form Components</a></li>
-                        </ul></li>
-                    <li class="sub-menu"><a href="javascript:;"> <i
-                            class="fa fa-th"></i> <span>Data Tables</span>
-                    </a>
-                        <ul class="sub">
-                            <li><a href="basic_table.html">Basic Table</a></li>
-                            <li><a href="responsive_table.html">Responsive Table</a></li>
-                        </ul></li>
-                    <li class="sub-menu"><a href="javascript:;"> <i
-                            class=" fa fa-bar-chart-o"></i> <span>Charts</span>
-                    </a>
-                        <ul class="sub">
-                            <li><a href="morris.html">Morris</a></li>
-                            <li><a href="chartjs.html">Chartjs</a></li>
-                        </ul></li>
-
-                </ul>
-                <!-- sidebar menu end-->
-            </div>
-        </aside>
-        <!--sidebar end-->
-
-        <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-        <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
 
@@ -134,7 +41,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
                         <div class="row mtbox">
                             <div class="col-md-3 col-sm-2 col-md-offset-1 box0">
                                 <div class="box1">
-                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*109.60*/routes/*109.66*/.Assets.at("images/presentCow_burned.png"))),format.raw/*109.108*/(""""
+                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*16.60*/routes/*16.66*/.Assets.at("images/presentCow_burned.png"))),format.raw/*16.108*/(""""
                                         style="width: 100px; height: 120px;">
                                     <!-- <span class="li_heart"></span> -->
                                     <h3>33</h3>
@@ -143,7 +50,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
                             </div>
                             <div class="col-md-2 col-sm-2 box0">
                                 <div class="box1">
-                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*118.60*/routes/*118.66*/.Assets.at("images/crying.png"))),format.raw/*118.97*/(""""
+                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*25.60*/routes/*25.66*/.Assets.at("images/crying.png"))),format.raw/*25.97*/(""""
                                         style="width: 100px; height: 120px;">
                                     <!-- <span class="li_cloud"></span> -->
                                     <h3 id="weathervalue"></h3>
@@ -159,7 +66,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
                         </div> -->
                             <div class="col-md-2 col-sm-2 box0">
                                 <div class="box1">
-                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*134.60*/routes/*134.66*/.Assets.at("images/sadCow.png"))),format.raw/*134.97*/(""""
+                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*41.60*/routes/*41.66*/.Assets.at("images/sadCow.png"))),format.raw/*41.97*/(""""
                                         style="width: 100px; height: 120px;">
                                     <!-- <span class="li_news"></span> -->
                                     <h3>+10</h3>
@@ -168,7 +75,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
                             </div>
                             <div class="col-md-3 col-sm-2 box0">
                                 <div class="box1">
-                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*143.60*/routes/*143.66*/.Assets.at("images/Relax_burned.png"))),format.raw/*143.103*/(""""
+                                    <img alt="Relax" src=""""),_display_(Seq[Any](/*50.60*/routes/*50.66*/.Assets.at("images/Relax_burned.png"))),format.raw/*50.103*/(""""
                                         style="width: 100px; height: 120px;">
                                     <!-- <span style="background-image: url(assets/img/Relax.jpg)"></span> -->
                                     <h3>OK!</h3>
@@ -190,14 +97,14 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
                                     <canvas id="serverstatus02" height="120" width="120"></canvas>
                                     <script>
                                     var doughnutData = [
-                                            """),format.raw/*165.45*/("""{"""),format.raw/*165.46*/("""
+                                            """),format.raw/*72.45*/("""{"""),format.raw/*72.46*/("""
                                                 value: 60,
                                                 color:"#68dff0"
-                                            """),format.raw/*168.45*/("""}"""),format.raw/*168.46*/(""",
-                                            """),format.raw/*169.45*/("""{"""),format.raw/*169.46*/("""
+                                            """),format.raw/*75.45*/("""}"""),format.raw/*75.46*/(""",
+                                            """),format.raw/*76.45*/("""{"""),format.raw/*76.46*/("""
                                                 value : 40,
                                                 color : "#444c57"
-                                            """),format.raw/*172.45*/("""}"""),format.raw/*172.46*/("""
+                                            """),format.raw/*79.45*/("""}"""),format.raw/*79.46*/("""
                                         ];
                                         var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
                                 </script>
@@ -423,72 +330,67 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
         </section>
 
         <!--main content end-->
-        <!--footer start-->
-        <footer class="site-footer">
-            <div class="text-center">
-                2014 - Alvarez.is <a href="index.html#" class="go-top"> <i
-                    class="fa fa-angle-up"></i>
-                </a>
-            </div>
-        </footer>
-        <!--footer end-->
+
+"""),_display_(Seq[Any](/*306.2*/footer())),format.raw/*306.10*/("""
+
     </section>
 
     <script type="application/javascript">
-        $(document).ready(function () """),format.raw/*410.39*/("""{"""),format.raw/*410.40*/("""
-            //$("#date-popover").popover("""),format.raw/*411.42*/("""{"""),format.raw/*411.43*/("""html: true, trigger: "manual""""),format.raw/*411.72*/("""}"""),format.raw/*411.73*/(""");
+        $(document).ready(function () """),format.raw/*311.39*/("""{"""),format.raw/*311.40*/("""
+            //$("#date-popover").popover("""),format.raw/*312.42*/("""{"""),format.raw/*312.43*/("""html: true, trigger: "manual""""),format.raw/*312.72*/("""}"""),format.raw/*312.73*/(""");
             $("#date-popover").hide();
-            $("#date-popover").click(function (e) """),format.raw/*413.51*/("""{"""),format.raw/*413.52*/("""
+            $("#date-popover").click(function (e) """),format.raw/*314.51*/("""{"""),format.raw/*314.52*/("""
                 $(this).hide();
-            """),format.raw/*415.13*/("""}"""),format.raw/*415.14*/(""");
+            """),format.raw/*316.13*/("""}"""),format.raw/*316.14*/(""");
         
-            $("#my-calendar").zabuto_calendar("""),format.raw/*417.47*/("""{"""),format.raw/*417.48*/("""
-                action: function () """),format.raw/*418.37*/("""{"""),format.raw/*418.38*/("""
+            $("#my-calendar").zabuto_calendar("""),format.raw/*318.47*/("""{"""),format.raw/*318.48*/("""
+                action: function () """),format.raw/*319.37*/("""{"""),format.raw/*319.38*/("""
                     return myDateFunction(this.id, false);
-                """),format.raw/*420.17*/("""}"""),format.raw/*420.18*/(""",
-                action_nav: function () """),format.raw/*421.41*/("""{"""),format.raw/*421.42*/("""
+                """),format.raw/*321.17*/("""}"""),format.raw/*321.18*/(""",
+                action_nav: function () """),format.raw/*322.41*/("""{"""),format.raw/*322.42*/("""
                     return myNavFunction(this.id);
-                """),format.raw/*423.17*/("""}"""),format.raw/*423.18*/(""",
-                ajax: """),format.raw/*424.23*/("""{"""),format.raw/*424.24*/("""
+                """),format.raw/*324.17*/("""}"""),format.raw/*324.18*/(""",
+                ajax: """),format.raw/*325.23*/("""{"""),format.raw/*325.24*/("""
                     url: "show_data.php?action=1",
                     modal: true
-                """),format.raw/*427.17*/("""}"""),format.raw/*427.18*/(""",
+                """),format.raw/*328.17*/("""}"""),format.raw/*328.18*/(""",
                 legend: [
-                    """),format.raw/*429.21*/("""{"""),format.raw/*429.22*/("""type: "text", label: "Special event", badge: "00""""),format.raw/*429.71*/("""}"""),format.raw/*429.72*/(""",
-                    """),format.raw/*430.21*/("""{"""),format.raw/*430.22*/("""type: "block", label: "Regular event", """),format.raw/*430.61*/("""}"""),format.raw/*430.62*/("""
+                    """),format.raw/*330.21*/("""{"""),format.raw/*330.22*/("""type: "text", label: "Special event", badge: "00""""),format.raw/*330.71*/("""}"""),format.raw/*330.72*/(""",
+                    """),format.raw/*331.21*/("""{"""),format.raw/*331.22*/("""type: "block", label: "Regular event", """),format.raw/*331.61*/("""}"""),format.raw/*331.62*/("""
                 ]
-            """),format.raw/*432.13*/("""}"""),format.raw/*432.14*/(""");
-        """),format.raw/*433.9*/("""}"""),format.raw/*433.10*/(""");
+            """),format.raw/*333.13*/("""}"""),format.raw/*333.14*/(""");
+        """),format.raw/*334.9*/("""}"""),format.raw/*334.10*/(""");
         
         
-        function myNavFunction(id) """),format.raw/*436.36*/("""{"""),format.raw/*436.37*/("""
+        function myNavFunction(id) """),format.raw/*337.36*/("""{"""),format.raw/*337.37*/("""
             $("#date-popover").hide();
             var nav = $("#" + id).data("navigation");
             var to = $("#" + id).data("to");
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-        """),format.raw/*441.9*/("""}"""),format.raw/*441.10*/("""
+        """),format.raw/*342.9*/("""}"""),format.raw/*342.10*/("""
     </script>
 
     <script>
-        var barChartData = """),format.raw/*445.28*/("""{"""),format.raw/*445.29*/("""
+        var barChartData = """),format.raw/*346.28*/("""{"""),format.raw/*346.29*/("""
             labels : ["January","February","March","April","May","June","July"],
             datasets : [
-                """),format.raw/*448.17*/("""{"""),format.raw/*448.18*/("""
+                """),format.raw/*349.17*/("""{"""),format.raw/*349.18*/("""
                     fillColor : "rgba(220,220,220,0.5)",
                     strokeColor : "rgba(220,220,220,1)",
                     data : [65,59,90,81,56,55,40]
-                """),format.raw/*452.17*/("""}"""),format.raw/*452.18*/(""",
-                """),format.raw/*453.17*/("""{"""),format.raw/*453.18*/("""
+                """),format.raw/*353.17*/("""}"""),format.raw/*353.18*/(""",
+                """),format.raw/*354.17*/("""{"""),format.raw/*354.18*/("""
                     fillColor : "rgba(151,187,205,0.5)",
                     strokeColor : "rgba(151,187,205,1)",
                     data : [28,48,40,19,96,27,100]
-                """),format.raw/*457.17*/("""}"""),format.raw/*457.18*/("""
+                """),format.raw/*358.17*/("""}"""),format.raw/*358.18*/("""
             ]
-        """),format.raw/*459.9*/("""}"""),format.raw/*459.10*/(""";
+        """),format.raw/*360.9*/("""}"""),format.raw/*360.10*/(""";
         var mybar = new Chart(document.getElementById("bar1").getContext("2d")).Bar(barChartData);
     </script> 
 
-""")))})),format.raw/*463.2*/("""
+
+""")))})),format.raw/*365.2*/("""
 """))}
     }
     
@@ -501,11 +403,11 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Cattle Center Dashboard")/*1.33*/ {_dis
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Mar 06 14:27:14 PST 2015
+                    DATE: Fri Mar 06 22:13:20 PST 2015
                     SOURCE: /home/ramyaky/Ramya/play-2.2.4/projectcmpe282/app/views/dashboard.scala.html
-                    HASH: da0a953aa14db0875a6e5248c7744c9ca538d81f
-                    MATRIX: 868->1|907->32|946->34|2753->1805|2768->1811|2820->1841|6668->5652|6684->5658|6750->5700|7322->6235|7338->6241|7392->6272|8333->7176|8349->7182|8403->7213|8987->7760|9003->7766|9064->7803|10200->8910|10230->8911|10427->9079|10457->9080|10532->9126|10562->9127|10762->9298|10792->9299|23357->21835|23387->21836|23458->21878|23488->21879|23546->21908|23576->21909|23697->22001|23727->22002|23801->22047|23831->22048|23918->22106|23948->22107|24014->22144|24044->22145|24149->22221|24179->22222|24250->22264|24280->22265|24377->22333|24407->22334|24460->22358|24490->22359|24619->22459|24649->22460|24726->22508|24756->22509|24834->22558|24864->22559|24915->22581|24945->22582|25013->22621|25043->22622|25103->22653|25133->22654|25172->22665|25202->22666|25287->22722|25317->22723|25568->22946|25598->22947|25683->23003|25713->23004|25865->23127|25895->23128|26105->23309|26135->23310|26182->23328|26212->23329|26423->23511|26453->23512|26504->23535|26534->23536|26684->23654
-                    LINES: 29->1|29->1|29->1|63->35|63->35|63->35|137->109|137->109|137->109|146->118|146->118|146->118|162->134|162->134|162->134|171->143|171->143|171->143|193->165|193->165|196->168|196->168|197->169|197->169|200->172|200->172|438->410|438->410|439->411|439->411|439->411|439->411|441->413|441->413|443->415|443->415|445->417|445->417|446->418|446->418|448->420|448->420|449->421|449->421|451->423|451->423|452->424|452->424|455->427|455->427|457->429|457->429|457->429|457->429|458->430|458->430|458->430|458->430|460->432|460->432|461->433|461->433|464->436|464->436|469->441|469->441|473->445|473->445|476->448|476->448|480->452|480->452|481->453|481->453|485->457|485->457|487->459|487->459|491->463
+                    HASH: 73beb22e309365d7eb1970ad7d47a080744ae78d
+                    MATRIX: 868->1|907->32|946->34|1021->75|1058->91|1499->496|1514->502|1579->544|2150->1079|2165->1085|2218->1116|3158->2020|3173->2026|3226->2057|3809->2604|3824->2610|3884->2647|5019->3754|5048->3755|5244->3923|5273->3924|5347->3970|5376->3971|5575->4142|5604->4143|17771->16274|17802->16282|17930->16381|17960->16382|18031->16424|18061->16425|18119->16454|18149->16455|18270->16547|18300->16548|18374->16593|18404->16594|18491->16652|18521->16653|18587->16690|18617->16691|18722->16767|18752->16768|18823->16810|18853->16811|18950->16879|18980->16880|19033->16904|19063->16905|19192->17005|19222->17006|19299->17054|19329->17055|19407->17104|19437->17105|19488->17127|19518->17128|19586->17167|19616->17168|19676->17199|19706->17200|19745->17211|19775->17212|19860->17268|19890->17269|20141->17492|20171->17493|20256->17549|20286->17550|20438->17673|20468->17674|20678->17855|20708->17856|20755->17874|20785->17875|20996->18057|21026->18058|21077->18081|21107->18082|21258->18201
+                    LINES: 29->1|29->1|29->1|33->5|33->5|44->16|44->16|44->16|53->25|53->25|53->25|69->41|69->41|69->41|78->50|78->50|78->50|100->72|100->72|103->75|103->75|104->76|104->76|107->79|107->79|334->306|334->306|339->311|339->311|340->312|340->312|340->312|340->312|342->314|342->314|344->316|344->316|346->318|346->318|347->319|347->319|349->321|349->321|350->322|350->322|352->324|352->324|353->325|353->325|356->328|356->328|358->330|358->330|358->330|358->330|359->331|359->331|359->331|359->331|361->333|361->333|362->334|362->334|365->337|365->337|370->342|370->342|374->346|374->346|377->349|377->349|381->353|381->353|382->354|382->354|386->358|386->358|388->360|388->360|393->365
                     -- GENERATED --
                 */
             

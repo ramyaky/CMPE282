@@ -6,10 +6,10 @@ function getCurrentWeather(){
                 data: { q: "santa clara,ca" },
                 cache: false,
                 success: function(data) {
-                tempInCelsius = data.main.temp - 273.15;
-                    unitsString = ("0".sup()).concat(" C");
+                    tempInCelsius = data.main.temp - 273.15;
+                    weatherString = ", ".concat(data.weather[0].main);
+                    unitsString = (("0".sup()).concat(" C")).concat(weatherString);
                     var tempString = (Math.round(tempInCelsius).toString()).concat(unitsString);
-                    //document.getElementById("weathervalue").innerHTML = tempString;
                     $('#weathervalue').html(tempString);              
                 }
             });
