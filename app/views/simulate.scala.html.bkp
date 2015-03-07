@@ -8,12 +8,11 @@
           <section class="wrapper site-min-height">
           	<h3><i class="fa fa-angle-right"></i> Simulation </h3>
           	<div class="row mt">
-          		<div class="col-lg-10">
+          		<div class="col-lg-12">
                     <label> Click the button to simulate cattle temperature </label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button id="simulate-button" type="button"> Simulate </button>
-                    <br><br>
-                    <div id="simulate-data" align="center"> </div>
+                    <div id="simulate-data"> </div>
           		</div>
           	</div>
 	      </section>
@@ -23,13 +22,13 @@
 
   </section>
   
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.canvasjs.min.js")"></script>
   <script type="text/javascript">
-    $('#simulate-button').click(function () {
+    $(function () {
         //Better to construct options first and then pass it as a parameter
         var options = {
-            backgroundColor: "#f2f2f2",
             title: {
-                text: "Cattle sensor values simulation"
+                text: "Spline Chart using jQuery Plugin"
             },
             animationEnabled: true,
             data: [

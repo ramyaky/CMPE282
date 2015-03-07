@@ -47,7 +47,7 @@ Seq[Any](format.raw/*1.7*/("""<footer class="site-footer">
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Mar 06 21:59:03 PST 2015
+                    DATE: Fri Mar 06 23:52:06 PST 2015
                     SOURCE: /home/ramyaky/Ramya/play-2.2.4/projectcmpe282/app/views/footer.scala.html
                     HASH: a6dea269019bc4180859bf583d1497e7864b4c2f
                     MATRIX: 856->6

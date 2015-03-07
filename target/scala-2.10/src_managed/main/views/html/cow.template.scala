@@ -92,7 +92,7 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Mar 06 22:36:58 PST 2015
+                    DATE: Fri Mar 06 23:52:06 PST 2015
                     SOURCE: /home/ramyaky/Ramya/play-2.2.4/projectcmpe282/app/views/cow.scala.html
                     HASH: 44f4caebfb797d822066cce6015b4c36d3d343d8
                     MATRIX: 772->1|883->18|922->23|956->49|995->51|1071->93|1108->109|2680->1646|2710->1654|2779->1692
