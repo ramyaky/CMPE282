@@ -1,3 +1,7 @@
+@(myArray: List[Double])
+
+@import com.google.gson.Gson
+
 @main("Welcome to My Play") {
 
   <section id="container" >
@@ -26,6 +30,15 @@
   <script type="text/javascript">
     $('#simulate-button').click(function () {
         //Better to construct options first and then pass it as a parameter
+        @**** var x  = @{new Gson().toJson(myArray)}; ****@
+        var data = @myArray;
+        var dataValues = [];
+        for(var i=0; i< data.length;i=i+2){
+            dataValues.push({
+                x: data[i],
+                y: data[i+1]
+            });
+        }
         var options = {
             backgroundColor: "#f2f2f2",
             title: {
@@ -35,18 +48,12 @@
             data: [
              {
                 type: "spline", //change it to line, area, column, pie, etc
-                dataPoints: [
-                    { x: 10, y: 10 },
-                    { x: 20, y: 12 },
-                    { x: 30, y: 8 },
-                    { x: 40, y: 14 },
-                    { x: 50, y: 6 },
-                    { x: 60, y: 24 },
-                    { x: 70, y: -4 },
-                    { x: 80, y: 10 }
-                ]
+                dataPoints: dataValues
              }
-            ]
+            ],
+            axisX: {
+                interval: 1
+            }
         };
 
         $("#simulate-data").CanvasJSChart(options);

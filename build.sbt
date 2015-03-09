@@ -8,4 +8,6 @@ libraryDependencies ++= Seq(
   cache
 )     
 
+libraryDependencies += "com.github.thiagolocatelli" % "parse4j" % "1.4"
+
 play.Project.playJavaSettings
