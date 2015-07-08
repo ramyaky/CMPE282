@@ -1,0 +1,387 @@
+@(message: String, noOfCowsInCattle: String , statusOk: String, noOfSickCows: String, jsonResult: String, heatIndex : String, myjsonResult: String, notify : List[String])
+
+@main("Cattle Center Dashboard") {
+
+    <section id="container">
+
+@commonTemplate()
+
+<section id="main-content">
+          <section class="wrapper">
+
+              <div class="row">
+                  <div class="col-lg-9 main-chart">
+                  
+                  <div class="row mtbox">
+                          <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                              <div class="box1">
+                              <img alt="Relax" src="@routes.Assets.at("images/cutie_burned.png")" style="width:100px;height:120px;">
+                                  <!-- <span class="li_heart"></span> -->
+                                  <h3>@noOfCowsInCattle</h3>
+                              </div>
+                                  <p>Number of cows in cattle center as of today</p>
+                          </div>
+                          <div class="col-md-3 col-sm-3 box0">
+                              <div class="box1">
+                              <img alt="weatherImage" id="displayImage" src="" style="width:100px;height:120px;">
+                                  <!-- <span class="li_cloud"></span> -->
+                                   <h3 id="weathervalue"></h3>
+                              </div>
+                                  <p>Local Weather</p>
+                          </div>
+                          <!--  <div class="col-md-2 col-sm-2 box0">
+                              <div class="box1">
+                                   <span class="li_stack"></span>
+                                  <h3>23</h3> 
+                              </div>
+                               <p>Number of cows cured from BRD</p>
+                          </div> -->
+                          <div class="col-md-2 col-sm-2 box0">
+                              <div class="box1">
+                              <img alt="Relax" src="@routes.Assets.at("images/crying.png")" style="width:100px;height:120px;">
+                                  <!-- <span class="li_news"></span> -->
+                                  <h3>@noOfSickCows</h3>
+                              </div>
+                                  <p>Cows experiencing abnormal body temperatures!</p>
+                          </div>
+                          @if(statusOk == "Abnormal"){
+                          <div class="col-md-3 col-sm-3 box0">
+                              <div class="box1">
+                              <img alt="Relax" src="@routes.Assets.at("images/angryCow.png")" style="width:100px;height:120px;">
+                                  <!-- <span style="background-image: url(assets/img/Relax.jpg)"></span> -->
+                                  <h3 style="font-family: sans-serif;">@statusOk</h3>
+                              </div>
+                                  <p>Your Cattle is experiencing abnormalities.</p>
+                          </div>
+                          }else{
+                          <div class="col-md-3 col-sm-3 box0">
+                              <div class="box1">
+                              <img alt="Relax" src="@routes.Assets.at("images/Relax_burned.png")" style="width:100px;height:120px;">
+                                  <!-- <span style="background-image: url(assets/img/Relax.jpg)"></span> -->
+                                  <h3>@statusOk</h3>
+                              </div>
+                                  <p>Your Cattle is working perfectly. Relax & enjoy.</p>
+                          </div>
+                          }
+                      
+                      </div><!-- /row mt -->        
+                  
+                      
+                    <div class="row">
+                        <!-- TWITTER PANEL -->
+                        <div class="col-md-4 mb">
+                              <div class="darkblue-panel pn" style="height:400px;">
+                                  <div class="darkblue-header">
+                                      <h5>Heat Index: NOAA via Wikipedia</h5>
+                                  </div>
+                                <img alt="Relax" src="@routes.Assets.at("images/THIndex.png")" style="width:300px;height:300px;">
+                              </div>
+                        </div><!-- /col-md-4 -->
+                        
+                        
+                        <div class="col-md-4 mb">
+                            <!-- INSTAGRAM PANEL -->
+                            <div class="darkblue-panel pn" style="height:400px;">
+                                <div class="darkblue-header">
+                                      <h5>Recent Heat Index</h5>
+                                  </div>
+                                  <div style="font-size: xx-large;color: #FF865C;padding-top: 100px;">
+                                  @heatIndex
+                                  </div>
+                                <br></br> <br></br>
+                                <button type="button" class="btn btn-theme" onclick="JSONTest();"><i class="fa fa-check"></i> Update Linear Regression</button>
+                                <!-- <canvas id="bar1" height="300" width="300"></canvas>
+                                <script>
+                                var chartvalues = @jsonResult;
+                                var arr = chartvalues;
+                                var labl = ["Slot1","Slot2","Slot3","Slot4"]
+                                    var barChartData = {
+                                            labels : labl,
+                                            datasets : [
+                                                {
+                                                    fillColor : "rgba(220,220,220,0.5)",
+                                                    strokeColor : "rgba(220,220,220,1)",
+                                                    data : arr
+                                                }
+                                            ]
+
+                                        };
+                                        var mybar = new Chart(document.getElementById("bar1").getContext("2d")).Bar(barChartData); 
+                                    
+
+                                </script> -->
+                            </div>
+                        </div><!-- /col-md-4 -->
+                        
+                        <div class="col-md-4 col-sm-4 mb">
+                            <!-- REVENUE PANEL -->
+                            <div class="darkblue-panel pn" style="height:400px;">
+                                <div class="darkblue-header">
+                                    <h5>REVENUE</h5>
+                                </div>
+                                <div class="chart mt">
+                                <!-- <iframe src="http://free.timeanddate.com/countdown/i4kqqwpd/n283/cf13/cm0/cu4/ct3/cs0/ca0/co1/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs110/szw448/szh189/tat/tacfff/tpt/tpcfff/iso2015-03-08T00:00:00" allowTransparency="true" frameborder="0" width="230" height="135"></iframe> -->
+                                <div id="savings-bar" style="height:300px" class="custom-bar-chart"></div>
+                              </div>
+                            </div>
+                        </div><!-- /col-md-4 -->
+                        
+                    </div><!-- /row -->
+                    
+                    <div class="row mt">
+                      <!--CUSTOM CHART START -->
+                      <div class="col-md-12 col-sm-12 mb">
+                      <div class="border-head">
+                          <h3>VISITS</h3>
+                      </div>
+                      <div id="bar-example" class="custom-bar-chart">
+                      </div>
+                      </div>
+                      <!--custom chart end-->
+                    </div><!-- /row -->    
+                    
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                  
+                  
+      <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+                  
+                  <div class="col-lg-3 ds">
+                    <!--COMPLETED ACTIONS DONUTS CHART-->
+                        <h3>Notifications</h3>
+                                      @if(notify != null){  
+                                        @for(singleNotify <- notify) {
+ 
+                      <!-- First Action -->
+                      <div class="desc">
+                          <div class="thumb">
+                              <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                          </div>
+                          <div class="details">
+                                 <a href="#" style="color: #666;">@singleNotify</a><br/>
+                          </div>
+                      </div>
+                      }
+                      }
+                     <!--  <!-- Second Action 
+                      <div class="desc">
+                          <div class="thumb">
+                              <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                          </div>
+                          <div class="details">
+                              <p><muted>3 Hours Ago</muted><br/>
+                                 <a href="#">Cow 3</a> experienced sudden rise in its body temperature<br/>
+                              </p>
+                          </div>
+                      </div> -->
+                      
+                       <!-- USERS ONLINE SECTION -->
+                        <h3>Treatments offered for BRD in Metaphylaxis</h3>
+                      <!-- First Member -->
+                      <div class="desc">
+                          <div class="thumb">
+                          </div>
+                          <div class="details">
+                              <p><a href="#">Micotil® (tilmicosin)</a><br/>
+                                 <muted>Cost to treat a 500-pound calf - $8.00</muted>
+                              </p>
+                          </div>
+                      </div>
+                      <!-- Second Member -->
+                      <div class="desc">
+                          <div class="thumb">
+                          </div>
+                          <div class="details">
+                              <p><a href="#">Nuflor® (florphenicol)</a><br/>
+                                 <muted>Cost to treat a 500-pound calf - $15.00</muted>
+                              </p>
+                          </div>
+                      </div>
+                      <!-- Third Member -->
+                      <div class="desc">
+                          <div class="thumb">
+                          </div>
+                          <div class="details">
+                              <p><a href="#">Tetradure® (oxytetracycline 300 mg/ml)</a><br/>
+                                 <muted>Cost to treat a 500-pound calf - ($4.05 - $6.02)</muted>
+                              </p>
+                          </div>
+                      </div>
+                      <!-- Fourth Member -->
+                      <div class="desc">
+                          <div class="thumb">
+                          </div>
+                          <div class="details">
+                              <p><a href="#">Excede® (ceftiofur 200mg/ml)</a><br/>
+                                 <muted>Cost to treat a 500-pound calf - $13.12</muted>
+                              </p>
+                          </div>
+                      </div>
+                      <!-- Fifth Member -->
+                      <div class="desc">
+                          <div class="thumb">
+                          </div>
+                          <div class="details">
+                              <p><a href="#">Draxxin® (tuluthramycin)</a><br/>
+                                 <muted>Cost to treat a 500-pound calf - $18.15</muted>
+                              </p>
+                          </div>
+                      </div>
+
+                        <!-- CALENDAR-->
+                        <div id="calendar" class="mb">
+                            <div class="panel green-panel no-margin">
+                                <div class="panel-body">
+                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                        <div class="arrow"></div>
+                                        <h3 class="popover-title" style="disadding: none;"></h3>
+                                        <div id="date-popover-content" class="popover-content"></div>
+                                    </div>
+                                    <div id="my-calendar"></div>
+                                </div>
+                            </div>
+                        </div><!-- / calendar -->
+                      
+                  </div><!-- /col-lg-3 -->
+              </div>
+          </section>
+      </section>
+
+        <!--main content end-->
+        <!--footer start-->
+
+@footer()
+
+        <!--footer end-->
+    </section>
+
+        <script type="text/javascript">  
+        
+         var JSONTest = function() {
+           // var reqNum = document.getElementById('location').value; 
+          /*  var arr =  $("input[name='check']:checked").map(function(){
+                    return this.value;
+                   }).get()*/
+          //  var data = JSON.stringify(arr);
+            //var url = "http://localhost:9000/compute/AmazonS3/SingleRequests/"+reqNum;
+            var url = "http://localhost:9000/predictiveanalysis";
+             
+            $.ajax({
+                url: url,
+                type: 'POST',
+                async: false,
+                success: function (result) {
+                    alert("Successfully uploaded files. Please check dashboard");
+                    //alert("In success");
+                    //switch (result) {
+                        //case true:
+                            //processResponse(result);
+                          //break;
+                    //default:
+                      //    resultDiv.html(result);
+                    //}
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Successfully uploaded files. Please check dashboard");
+                    //alert(xhr.status);
+                    //alert(thrownError);
+                }
+           });
+          }
+
+
+        </script>
+
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            //$("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+    <script>
+
+        var x = @Html(myjsonResult);
+        
+        for(var i = 0; i < x.length; i++) {
+              var y = x[i];
+              for(var k in y) {
+                  if(k == "temperature") {
+                      y[k] = parseInt(y[k]);
+                  }
+              }
+        }
+        //var mapValues=[{cow: 'cow1', temperature: 30},{cow: 'cow2', temperature: 32},{cow: 'cow3', temperature: 38},{cow: 'cow4', temperature: 40},{cow: 'cow5', temperature: 42},{cow: 'cow6', temperature: 34}];
+        
+        Morris.Bar({
+            element: 'bar-example',
+            data: x,
+            xkey: 'cow',
+            ykeys: ['temperature'],
+            labels: ['temperature'],
+            barRatio: 0.4,
+            xLabelAngle: 35,
+            hideHover: 'auto',
+            barColors: ['#FF865C',]
+            });
+
+        var savings = @Html(jsonResult);
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        
+        for(var i = 0; i < savings.length; i++) {
+              var b = savings[i];
+              for(var k in b) {
+                  if(k == "y") {
+                      b[k] = parseFloat(b[k]);
+                  }
+                  if(k == "x") {
+                      b[k] = months[b[k]];
+                  }
+              }
+        } 
+
+        Morris.Bar({
+            element: 'savings-bar',
+            data: savings,
+            xkey: 'x',
+            ykeys: ['y'],
+            labels: ['dollars($)'],
+            barRatio: 0.4,
+            xLabelAngle: 1,
+            hideHover: 'auto',
+            barColors: ['#c9aa5f',]
+            });
+
+    </script> 
+
+}

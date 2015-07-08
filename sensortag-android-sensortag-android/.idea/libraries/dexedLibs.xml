@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sensortag-android-sensortag-android/bin/dexedLibs/bolts-android-1.1.4-0f295a58fb61f7e5710d89d5832afb8d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sensortag-android-sensortag-android/bin/dexedLibs/android-support-v4-ede8a10ceb37929fef3fa27e66eea59a.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sensortag-android-sensortag-android/bin/dexedLibs/bolts-android-1.1.4-javadoc-697d63146f6e485b6bae7a5fe86d57b6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sensortag-android-sensortag-android/bin/dexedLibs/android-support-v4-80cc657668927794361e0831f8f36a0e.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sensortag-android-sensortag-android/bin/dexedLibs/Parse-1.8.2-7613a92464695d40f83701eb5fa4d58b.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

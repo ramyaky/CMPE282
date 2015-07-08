@@ -1,0 +1,69 @@
+@(myArray: List[Double])
+
+@import com.google.gson.Gson
+
+@main("Cattle Center Dashboard") {
+
+  <section id="container" >
+
+@commonTemplate()
+      
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+          	<h3><i class="fa fa-angle-right"></i> Simulation </h3>
+          	<div class="row mt">
+          		<div class="col-lg-10">
+                    <label> Click the button to simulate cattle temperature </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="simulate-button" type="button"> Simulate Sick Scenario </button>
+                    <br><br>
+                    <div id="simulate-data" align="center"> </div>
+          		</div>
+          	</div>
+	      </section>
+      </section>
+
+@footer()
+
+  </section>
+  
+  <script type="text/javascript">
+    $('#simulate-button').click(function () {
+        //Better to construct options first and then pass it as a parameter
+        @**** var x  = @{new Gson().toJson(myArray)}; ****@
+        var data = @myArray;
+        var dataValues = [];
+        for(var i=0; i< data.length;i=i+2){
+            dataValues.push({
+                x: data[i],
+                y: data[i+1]
+            });
+        }
+        var options = {
+            backgroundColor: "#f2f2f2",
+            title: {
+                text: "Cattle sensor values simulation"
+            },
+            animationEnabled: true,
+            data: [
+             {
+                type: "spline", //change it to line, area, column, pie, etc
+                dataPoints: dataValues
+             }
+            ],
+            axisX: {
+                interval: 1,
+                suffix: ":00",
+                title: "Sensor reading intervals"
+            },
+            axisY: {
+                title: "Cattle body Temp (F)"
+            }
+        };
+
+        $("#simulate-data").CanvasJSChart(options);
+
+    });
+  </script>
+
+}
